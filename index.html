@@ -19,47 +19,112 @@
         <a href="#">Contact</a>
     </nav>
  </header>
- <!--intro -->
-  <section class="intro">
+ <!--Home Section-->
+  <section id = "Home" class="intro">
     <div class="intro-text">
       <h2>Beyond Just Learning</h2>
       <p>Empowering students and professionals with top-quality online courses, expert mentors, and building a community that drives success.</p>
-      <button>Get Started</button>
+      <button id = "Getstartedbutton">Get Started</button>
     </div>
     <img src = "image.png" alt = "Basel EduTech Learning">
     </section>
-<!-- Features-->
-  <section class="features">
-    <h3>Why Choose Basel EduTech?</h3>
+<!-- Courses Section-->
+  <section id = "Courses" class="features">
+    <h2>Most Popular Courses</h2>
     <div class="cards">
       <div class="card">
-        <h4>Expert Mentors</h4>
-        <p>Learn from industry leaders and professionals with years of prior experience.</p>
+        <h3>Web Development</h3>
+        <p>Master HTML,CSS,JavaScript,React and other Frameworks.</p>
       </div>
       <div class="card">
-        <h4>Flexible Learning</h4>
-        <p>Access the courses anywhere with 24/7 doubt assistance.</p>
+        <h3>Data Science</h3>
+        <p>Learn Python,Machine Learning and AI Techniques.</p>
       </div>
       <div class="card">
-        <h4>Certification</h4>
-        <p>Get certified and enhance your career opportunities.</p>
-      </div>
-      <div class = "card">
-        <h4> Placement Assistance</h4>
-        <p>Provided Placement Assistance with Mock Interviews, Hackathons and Quizzes</p>
-      </div>
-      <div class = "card">
-        <h4>Recorded Sessions</h4>
-        <p>Provided Recorded Sessions for the Live Classes with 24/7 Access</p>
+        <h3>Cyber Security</h3>
+        <p>Protect Systems and Networks with Hands-on Training.</p>
       </div>
     </div>
   </section>
-  <!--Call to Action-->
-   <section class="Call to Action">
-    <h3>Start Your Learning Journey Today!</h3>
-    <button>Join Now</button>
+  <!--About Section-->
+  <section id = "About">
+  <h2>About Us</h2>
+    <p>We are dedicated to providing high-quality education online. 
+       Our platform offers interactive, user-friendly and practical learning experiences for students with live classes and professional guidance worldwide.</p>
   </section>
-  <!--Footer -->
+  <!--Contact Section-->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <label>Name</label>
+      <input type="text" placeholder="Enter your name" required>
+      <label>Email</label>
+      <input type="email" placeholder="Enter your email" required>
+      <label>Message</label>
+      <textarea placeholder="Write your message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+<!--Login/SignUp model-->
+<div id = "authModel", class = "Model">
+  <div class = "Model-Content"></div>
+  <span class ="Close">&times;</span>
+  <!--tabs-->
+  <div class="tabs">
+    <button class ="tab-btn active" id = "loginTab">Login</button>
+    <button class="tab-btn" id="signupTab">Sign Up</button>
+  </div>
+<!-- Login Form -->
+      <form id="loginForm">
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+ <!-- Signup Form -->
+      <form id="signupForm" style="display:none;">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+</div>
+<script>
+    //model js
+    const modal = document.getElementById("authModal");
+    const btn = document.getElementById("getStartedBtn");
+    const closeBtn = document.querySelector(".close");
+    const loginTab = document.getElementById("loginTab");
+    const signupTab = document.getElementById("signupTab");
+    const loginForm = document.getElementById("loginForm");
+    const signupForm = document.getElementById("signupForm");
+
+    btn.onclick = () => modal.style.display = "flex";
+    closeBtn.onclick = () => modal.style.display = "none";
+    window.onclick = e => { if (e.target == modal) modal.style.display = "none"; };
+
+    // to shift tabs
+    loginTab.onclick = () => {
+      loginForm.style.display = "block";
+      signupForm.style.display = "none";
+      loginTab.classList.add("active");
+      signupTab.classList.remove("active");
+    };
+    signupTab.onclick = () => {
+      loginForm.style.display = "none";
+      signupForm.style.display = "block";
+      signupTab.classList.add("active");
+      loginTab.classList.remove("active");
+    };
+</script>
+<!--Call to Action-->
+  <section class="calltoaction">
+    <h3>Start Your Learning Journey Today!</h3>
+    <a href="join.html" class="btn-link">Join Now</a>
+  </section>
+<!--Footer -->
   <footer>
     &copy; 2025 Basel EduTech. All rights reserved.
   </footer>

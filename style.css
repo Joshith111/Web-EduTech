@@ -1,9 +1,10 @@
-body {
+body { 
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #f9fafc;
   color: #333;
 }
+
 /*Header*/
 header {
   display: flex;
@@ -12,6 +13,9 @@ header {
   padding: 20px 50px;
   background: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
 }
 header h1 {
   font-size: 22px;
@@ -21,8 +25,11 @@ nav a {
   margin: 0 12px;
   text-decoration: none;
   color: #555;
+  transition: color 0.3s ease; 
 }
-nav a:hover { color: #426486; }
+nav a:hover { 
+  color: #426486;
+}
 
 /* Intro */
 .intro {
@@ -31,6 +38,7 @@ nav a:hover { color: #426486; }
   align-items: center;
   padding: 60px 50px;
   background: #55b3de;
+  flex-wrap: wrap; 
 }
 .intro-text { max-width: 50%; }
 .intro-text h2 {
@@ -49,11 +57,22 @@ nav a:hover { color: #426486; }
   background: #2c3e50;
   color: #fff;
   cursor: pointer;
+  transition: all 0.3s ease; 
+}
+.intro-text button:hover { 
+  background: #fff;
+  color: #2c3e50;
+  transform: scale(1.05); 
 }
 .intro img {
   width: 380px;
   border-radius: 10px;
+  transition: transform 0.3s ease; 
 }
+.intro img:hover { 
+  transform: scale(1.05); 
+}
+
 /*Features*/
 .features {
   text-align: center;
@@ -73,6 +92,11 @@ nav a:hover { color: #426486; }
   width: 250px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.card:hover {
+  transform: translateY(-8px); 
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15); 
 }
 .card h4 { color: #2c3e50; margin-bottom: 10px; }
 .card p { color: #555; font-size: 14px; }
@@ -94,7 +118,14 @@ nav a:hover { color: #426486; }
   background: #fff;
   color: #2c3e50;
   cursor: pointer;
+  transition: all 0.3s ease; 
 }
+.calltoaction button:hover {
+  background: #55b3de; 
+  color: #fff;
+  transform: scale(1.05); 
+}
+
 /*Footer*/
 footer {
   text-align: center;
@@ -102,4 +133,47 @@ footer {
   background: #f1f3f6;
   color: #666;
   font-size: 13px;
+}
+
+/*media queries */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+  .intro-text { 
+    max-width: 100%; 
+    margin-bottom: 20px;
+  }
+  .intro img {
+    width: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 20px;
+  }
+  nav a {
+    display: inline-block;
+    margin: 8px;
+  }
+  .intro-text h2 {
+    font-size: 26px;
+  }
+  .intro-text p {
+    font-size: 14px;
+  }
+  .intro img {
+    width: 250px;
+  }
+  .calltoaction {
+    margin: 20px;
+    padding: 40px 20px;
+  }
 }
